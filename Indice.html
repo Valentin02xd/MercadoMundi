@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado Mundi - Componentes y Periféricos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Mercado Mundi</h1>
+        <nav id="mainNav">
+            <div class="search-container">
+                <input type="text" id="searchBar" placeholder="Buscar en todo el catálogo...">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            <div class="cart-icon-container">
+                <i class="fas fa-shopping-cart" id="cartIcon"></i>
+                <span id="cartItemCount">0</span>
+            </div>
+            <ul>
+                <li><a href="#" data-section="home">Inicio</a></li>
+                <li><a href="#" data-section="category" data-value="Periféricos">Periféricos</a></li>
+                <li><a href="#" data-section="category" data-value="Componentes de PC">Componentes</a></li>
+                <li class="dropdown">
+                    <a href="#">Marcas <span class="arrow-down">&#9660;</span></a>
+                    <div class="dropdown-content" id="brandsDropdownContainer">
+                        </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 id="currentSectionTitle" class="section-title"></h2> 
+        <div id="productList" class="product-grid-container">
+            <!-- 
+            Los productos se cargarán aquí dinámicamente mediante script.js.
+            Para que un producto sea seleccionable y ver sus detalles, script.js 
+            podría generar cada elemento de producto de la siguiente manera:
+
+            <div class="product-item" data-product-id="ID_UNICO_DEL_PRODUCTO">
+                <img src="ruta/a/imagen.jpg" alt="Nombre Producto">
+                <h3>Nombre del Producto</h3>
+                <p>Precio o descripción corta</p>
+                <button class="view-details-button">Ver Detalles</button>
+            </div>
+            
+            Al hacer clic en "Ver Detalles" (o en el producto mismo), JavaScript se encargaría
+            de obtener el ID_UNICO_DEL_PRODUCTO y luego mostrar la información completa.
+            Esto podría ser navegando a una nueva página de detalles o mostrando un modal/expansión aquí mismo.
+            -->
+            </div>
+    </main>
+
+    <div id="shoppingCart" class="shopping-cart-container">
+        <h2>Mi Pedido</h2>
+        <button id="closeCartButton" class="close-cart-btn" aria-label="Cerrar carrito">&times;</button>
+        <div id="cartItemsList">
+            <!-- Los artículos del carrito se renderizarán aquí -->
+            <p class="empty-cart-message">Tu carrito está vacío.</p>
+        </div>
+        <div class="cart-summary">
+            <p>Total: <span id="cartTotal">$0.00</span></p>
+            <button id="checkoutButton" class="checkout-btn">Finalizar Compra</button>
+            <button id="clearCartButton" class="clear-cart-btn">Vaciar Carrito</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
